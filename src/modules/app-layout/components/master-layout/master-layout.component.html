@@ -1,0 +1,14 @@
+<mat-drawer-container class="master-layout-container">
+  <mat-drawer mode="side" opened class="side-nav" *ngIf="!lastBreadcrumb?.hideSideNavigation">
+    <app-side-navigation [breadcrumbs]="breadcrumbs"></app-side-navigation>
+    {{currentScreenSize}}
+  </mat-drawer>
+  <mat-drawer-content class="master-content">
+    <app-top-navigation [breadcrumbs]="breadcrumbs" *ngIf="!lastBreadcrumb?.hideTopNavigation"></app-top-navigation>
+    <app-breadcrumbs [breadcrumbs]="breadcrumbs" *ngIf="!lastBreadcrumb?.hideBreadcrumbs"></app-breadcrumbs>
+    <div>
+      {{breadcrumbs | json}}
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

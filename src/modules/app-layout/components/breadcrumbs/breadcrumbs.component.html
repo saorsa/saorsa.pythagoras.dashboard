@@ -1,0 +1,6 @@
+<div *ngIf="breadcrumbs">
+  <span *ngFor="let b of breadcrumbs; let last = last">
+    <a [href]="b.url">{{b.label}}</a>
+    <span *ngIf="!last"> | </span>
+  </span>
+</div>
